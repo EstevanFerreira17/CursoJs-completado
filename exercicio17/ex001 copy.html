@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador</title>
+    <style>
+        body {
+            background: rgb(89, 89, 216);
+    font: normal 15pt Arial;
+}
+
+header {
+    color: white;
+    text-align: center;
+}
+
+section {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    width: 500px;
+    margin: auto;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.747);
+}
+
+footer {
+    color: white;
+    text-align: center;
+    font-style: italic;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Contador</h1>
+    </header>
+    <section>
+        <div>
+            <p>inicio <input type="number" name="inicio" id="inicio"></p>
+            <p>Fim <input type="number" name="fim" id="fim"></p> 
+             <p>Passo <input type="number" name="pas" id="pas"></p>
+         </div>
+         <div id="cont">
+           <p><input type="button" value="contar" onclick="contar()"></p>
+         </div>
+         <div id="resp">
+            Aqui aparecera a resposta
+         </div>
+         
+    </section>
+
+    <footer>
+        <p>&copy; CursoEmVídeo</p>
+    </footer>
+    <script>
+        function contar() {
+            //coleta de dados 
+            var ini = document.getElementById('inicio')
+            var fim = document.getElementById('fim')
+            var passo = document.getElementById('pas')
+
+            //div que sera adicionado os resultados
+            var resposta = document.getElementById('resp')
+
+            //formatando a string para number
+            var i = Number(ini.value)
+            var f = Number(fim.value)
+            var p = Number(passo.value)
+            if (p == 0) {
+                p = 1
+            }
+            resposta.innerHTML = 'Contando...'
+
+            if (i == 0 && f == 0) {
+
+                alert('Erro')
+                resposta.innerHTML = 'Impossivel contar'
+
+               } else if (i < f) {
+
+                    //contagem crescente
+                    for (var j=i; j<=f; j+=p) {
+                        resposta.innerHTML += `${j}, `
+                    }
+
+                    } else {
+
+                    //contagem decrescente
+                    for (j=i; j>=f; j-=p){
+                        resposta.innerHTML += `${j}, `
+
+                    }
+                }
+            }
+    
+
+    
+    </script>
+</body>
+</html>

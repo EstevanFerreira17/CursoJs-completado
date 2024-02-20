@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador</title>
+    <style>
+        body {
+            background: rgb(89, 89, 216);
+    font: normal 15pt Arial;
+}
+
+header {
+    color: white;
+    text-align: center;
+}
+
+section {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    width: 500px;
+    margin: auto;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.747);
+}
+
+footer {
+    color: white;
+    text-align: center;
+    font-style: italic;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Contador</h1>
+    </header>
+    <section>
+        <div>
+            inicio <input type="number" name="inicio" id="inicio">
+            <p>Fim <input type="number" name="fim" id="fim"></p> 
+             Passo <input type="number" name="pas" id="pas">
+         </div>
+         <div id="cont">
+           <p><input type="button" value="contar" onclick="contar()"></p>
+         </div>
+         <div id="resp">
+            Aqui aparecera a resposta
+         </div>
+         
+    </section>
+
+    <footer>
+        <p>&copy; CursoEmVídeo</p>
+    </footer>
+    <script>
+        function contar() {
+    var ini = Number((document.getElementById('inicio')).value)
+    var f = Number((document.getElementById('fim')).value)
+    var p = Number((document.getElementById('pas')).value)
+    var res = document.getElementById('resp')
+    var i = 0
+    var array = []
+    if (ini == 0 || f == 0 || p == 0) {
+        res.innerHTML = 'digite um numero diferente de 0 em cada caixinha...'
+    } else if (ini < f) {
+        while (ini <= f) {      
+        array[i] = ini
+        ini += p
+        i++
+        }
+        res.innerHTML = array.join(', ')
+    } else {
+        while (ini >= f) {
+        array[i] = ini
+        ini -= p
+        i++
+        }   
+        res.innerHTML = array.join(', ')   
+    }
+}
+    
+    </script>
+</body>
+</html>

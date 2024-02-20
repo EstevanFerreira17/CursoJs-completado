@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada</title>
+    <style>
+        body {
+            background: rgb(218, 35, 35);
+    font: normal 15pt Arial;
+}
+
+header {
+    color: white;
+    text-align: center;
+}
+
+section {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    width: 530px;
+    margin: auto;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.747);
+}
+
+div#resp {
+    text-align: center;
+    margin: 20px;
+}
+
+footer {
+    color: white;
+    text-align: center;
+    font-style: italic;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Vamos Tabuar!!!</h1>
+    </header>
+    <section>
+        <div>
+            Digite um Número: (n) <input type="number" name="num" id="num">
+            <input type="button" value="começar tabuada" onclick="tabuada()">           
+         </div>
+         <div id="resp">
+          Tabuada:
+          <p name="p">do Nº: </p>
+          <p name="p">n x 1 = ?</p>
+          <p name="p">n x 2 = ?</p>
+          <p name="p">n x 3 = ?</p>
+          <p name="p">n x 4 = ?</p>
+          <p name="p">n x 5 = ?</p>
+          <p name="p">n x 6 = ?</p>
+          <p name="p">n x 7 = ?</p>
+          <p name="p">n x 8 = ?</p>
+          <p name="p">n x 9 = ?</p>
+          <p name="p">n x 10 = ?</p>
+         </div>
+         
+    </section>
+
+    <footer>
+        <p id="copy">&copy; CursoEmVídeo</p>
+    </footer>
+    <script>
+        function tabuada() {
+    var tabuada = []
+    var n = Number(document.getElementById('num').value)
+    var paragrafo = document.getElementsByName('p')
+    var j = 0
+    var h = 0
+    var l = 1
+    for (i=1; i<=10; i++) {
+        tabuada[j] = n * i 
+        j++
+    }
+    paragrafo[0].innerHTML = 'do Nº: ' + n
+    
+    for (i=1; i<=paragrafo.length; i++) {
+        paragrafo[i].innerHTML = n + ' x ' + l + ' = ' + tabuada[h]
+        l++
+        h++
+    }
+}
+    </script>
+</body>
+</html>

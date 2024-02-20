@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font: normal 13pt Arial;
+            background: rgb(85, 85, 190);
+        }
+        div {
+            font: normal 15pt Arial;
+            background: rgb(34, 34, 255);
+            margin-top: 20pt;
+        }
+        input {
+           background: rgb(173, 209, 44);
+        }
+    </style>
+</head>
+<body>
+    <h1>Testando Nacionalidade</h1>
+    Em que Pais vc nasceu??<input type="text" name="txtn" id="txtn">
+    <input type="button" value="Verificar" id="nacionalidade" onclick="verificar()">
+    <div id="res">Resposta</div>
+    
+    <script>
+        
+        function verificar() {
+            var nac = document.getElementById('txtn')
+            var res = document.getElementById('res')
+            res.innerHTML = '<p>Você nasceu no(a) <strong>'+ nac.value + '</strong>, correto??</p></br>'
+            if (nac.value == 'Brasil') {
+                res.innerHTML += '<p>Você é brasileiro!!!!!!</p>'
+            } else {
+                res.innerHTML += '<p>Você é estrangeiro!</p>'
+            }
+            res.innerHTML += '<p>Obrigado por usar este programa</p>'
+        }
+    </script>
+</body>
+</html>
