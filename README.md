@@ -1,2 +1,2 @@
 # CursoJs-completado
- Curso Js
+ Curso de Javascript
